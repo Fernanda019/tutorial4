@@ -1,4 +1,5 @@
 <script>
+import router from '@/router';
 import axios from 'axios';
 import { ref, onMounted } from 'vue';
 
@@ -70,6 +71,11 @@ export default {
                         <button @click="eliminarLibro(libro.id,libro.titulo)">
                             Eliminar
                         </button>
+                        <router-link :to="`/editarLibro/${libro.id}`">
+                            <button>
+                                Editar
+                            </button>
+                        </router-link>
                     </div>
                 </tr>
             </tbody>

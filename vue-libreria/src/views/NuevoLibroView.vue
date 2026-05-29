@@ -14,9 +14,28 @@ export default {
             disponibilidad: ''
         })
 
+        const agregarLibro = async () => {
+            try {
+                await axios.post('/api/libros', nuevoLibro.value);
+                alert("Libro agregado exitosamente.");
+                // Limpiar el formulario después de agregar el libro
+                nuevoLibro.value = {
+                    titulo: '',
+                    autor: '',
+                    ISBN: '',
+                    genero: '',
+                    precio: '',
+                    disponibilidad: ''
+                };
+            } catch (error) {
+                console.error('Error al agregar el libro:', error);
+                alert("Error al agregar el libro. Por favor, inténtalo de nuevo.");
+            }
+        };
 
         return{
             nuevoLibro,
+            agregarLibro,
         }
 
     }
