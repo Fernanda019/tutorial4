@@ -1,0 +1,23 @@
+{
+    "Libros": [
+        {
+            "id":"1", 
+            "titulo": "primer libro",
+            "autor": "JuanDavid_Dev",
+            "JSON": "123456789",
+            "genero": "ficción",
+            "precio": "1 USD",
+            "Disponibilidad": true
+        }
+        ,
+        {
+            "id":"2", 
+            "titulo": "segundo libro",
+            "autor": "JuanDavid_Dev",
+            "JSON": "123456789",
+            "genero": "ficción",
+            "precio": "2 USD",
+            "Disponibilidad": true
+        }
+    ]
+}
