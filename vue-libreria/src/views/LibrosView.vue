@@ -61,17 +61,17 @@ export default {
 
             <tbody>
                 <tr v-for="libro in libros" :key="libro.id">
-                    <td>{{ libro.id }}</td>
+                    <td class="alinear">{{ libro.id }}</td>
                     <td>{{ libro.titulo }}</td>
                     <td>{{ libro.ISBN }}</td>
                     <td>{{ libro.genero }}</td>
-                    <td>{{ libro.precio }}</td>
+                    <td class="alinear">{{ libro.precio }}</td>
                     <td>{{ libro.disponibilidad }}</td>
-                    <div>
-                        <button @click="eliminarLibro(libro.id,libro.titulo)">
+                    <div class="botones">
+                        <button class="btn eliminar" @click="eliminarLibro(libro.id,libro.titulo)">
                             Eliminar
                         </button>
-                        <router-link :to="`/editarLibro/${libro.id}`">
+                        <router-link class="btneditar" :to="`/editarLibro/${libro.id}`">
                             <button>
                                 Editar
                             </button>
@@ -83,5 +83,64 @@ export default {
     </main>
 </template>
 
-<style>
+<style scoped>
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 25px auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    border: 1px solid #000000;
+    padding: 10px;
+}
+
+th {
+    background-color: #e2e2e2;
+}
+
+.alinear {
+    text-align: center;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-around;
+    border: solid 1px #505050;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    color:#000000;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin: 5px;
+}
+
+.eliminar {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.eliminar:hover {
+    background-color: #ff00009d;
+    color: #fff;
+}
+
+.editar {
+    background-color: #ffea00c7;
+    color: #fff;
+}
+
+.editar:hover {
+    background-color: #b2a402;
+    color: #fff;
+}
 </style>
