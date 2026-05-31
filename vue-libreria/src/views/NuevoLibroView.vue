@@ -123,6 +123,7 @@ input:focus {
 .enviar {
     background-color: #14bd19;
     color: #fff;
+    margin-top: 20px;
 }
 
 .enviar:hover {
